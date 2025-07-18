@@ -1,0 +1,85 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuristic Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/icons/favicon.svg" />
+</head>
+<body>
+  <canvas class="background" id="starfield"></canvas>
+  
+  <main class="dashboard">
+
+    <!-- Time Widget -->
+    <section class="widget time-widget">
+      <div id="time">--:--</div>
+      <div id="date">-- -- ----</div>
+    </section>
+
+    <!-- Search Terminal -->
+    <section class="widget search-widget">
+      <input type="text" id="search" placeholder="Initiate protocol..." autocomplete="off" />
+    </section>
+
+    <!-- Quick Links -->
+    <section class="widget links-widget">
+      <div class="links-grid">
+        <a href="https://google.com" target="_blank">Google</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
+        <!-- Add more as needed -->
+      </div>
+    </section>
+
+    <!-- Quote of the Day -->
+    <section class="widget quote-widget">
+      <blockquote id="quote">"Fetching insight..."</blockquote>
+    </section>
+
+    <!-- Settings Icon -->
+    <div class="settings-btn">
+      <img src="assets/icons/settings.svg" alt="⚙️" />
+    </div>
+
+  </main>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel hidden">
+    <h2>⚙ Settings</h2>
+
+    <div class="setting-option">
+        <label for="theme-select">🎨 Theme:</label>
+        <select id="theme-select">
+        <option value="blue" selected>Blue</option>
+        <option value="green">Green</option>
+        <option value="red">Red</option>
+        <option value="purple">Purple</option>
+        </select>
+    </div>
+
+    <div class="setting-option">
+        <label><input type="checkbox" id="toggle-sound" checked /> 🔊 Sound Effects</label>
+    </div>
+
+    <div class="setting-option">
+        <label><input type="checkbox" id="toggle-bg" checked /> 🌌 Background Animation</label>
+    </div>
+
+    <button id="close-settings">✖ Close</button>
+    </div>
+
+
+    <audio id="hover-sound" src="assets/sounds/hover.wav" preload="auto"></audio>
+    <audio id="click-sound" src="assets/sounds/click.wav" preload="auto"></audio>
+    <!-- <audio id="type-sound" src="assets/sounds/type.wav" preload="auto"></audio> -->
+    <!-- <audio id="backspace-sound" src="assets/sounds/backspace.wav" preload="auto"></audio> -->
+    <audio id="type-sound" src="assets/sounds/type-ii.wav" preload="auto"></audio>
+    <audio id="backspace-sound" src="assets/sounds/backspace-ii.wav" preload="auto"></audio>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

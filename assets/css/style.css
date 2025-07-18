@@ -1,0 +1,223 @@
+/* ========== Theme Variable ========== */
+:root {
+  --neon: #00f0ff; /* Default: blue */
+}
+
+/* ========== Font Face ========== */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/static/Orbitron-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/static/Orbitron-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../fonts/static/Orbitron-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f1c;
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
+  color: #ffffffcc;
+  overflow: hidden;
+}
+
+body.loading .dashboard,
+body.loading .settings-btn,
+body.loading .background,
+body.loading .fog-layer {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+body:not(.loading) .dashboard,
+body:not(.loading) .settings-btn,
+body:not(.loading) .background,
+body:not(.loading) .fog-layer {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ========== Background FX ========== */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+}
+
+/* ========== Dashboard Layout ========== */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* ========== Widget Base ========== */
+.widget {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  width: min(90%, 600px);
+  box-shadow: 0 0 12px var(--neon);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.widget:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 18px var(--neon);
+}
+
+/* ========== Time Widget ========== */
+#time {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--neon);
+  text-shadow: 0 0 10px var(--neon);
+}
+#date {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* ========== Search Terminal ========== */
+.search-widget input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  box-shadow: inset 0 0 8px var(--neon);
+  outline: none;
+  font-family: inherit;
+}
+.search-widget input::placeholder {
+  color: #aaa;
+}
+
+/* ========== Links Grid ========== */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+.links-grid a {
+  text-align: center;
+  padding: 0.8rem;
+  display: block;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffffcc;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease-in-out;
+}
+.links-grid a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--neon);
+  text-shadow: 0 0 8px var(--neon);
+}
+
+/* ========== Quote Widget ========== */
+.quote-widget blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #ccc;
+  border-left: 3px solid var(--neon);
+  padding-left: 1rem;
+}
+
+/* ========== Settings Button ========== */
+.settings-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding: 1rem;
+}
+.settings-btn img {
+  width: 32px;
+  filter: drop-shadow(0 0 4px var(--neon));
+  transition: transform 0.3s ease-in-out;
+}
+.settings-btn:hover img {
+  transform: rotate(90deg);
+}
+
+/* ========== Settings Panel ========== */
+.settings-panel {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 260px;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px var(--neon);
+  z-index: 10;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.settings-panel.hidden {
+  transform: translateY(-50%) translateX(300px);
+  opacity: 0;
+  pointer-events: none;
+}
+.settings-panel h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.setting-option {
+  margin-bottom: 1rem;
+}
+.setting-option label {
+  font-size: 0.95rem;
+}
+.settings-panel select,
+.settings-panel input[type="checkbox"] {
+  margin-left: 0.5rem;
+}
+.settings-panel button {
+  background: var(--neon);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+}
+.settings-panel button:hover {
+  background: color-mix(in srgb, var(--neon) 70%, #000);
+}
