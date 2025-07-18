@@ -109,6 +109,55 @@ body:not(.loading) .fog-layer {
   margin-top: 0.5rem;
 }
 
+/* Combined container */
+.datetime-weather-widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Time styles */
+.time-block {
+  flex: 1;
+  text-align: left;
+}
+
+/* Weather styles */
+.weather-block {
+  flex: 1;
+  text-align: right;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+#weather-info {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--neon);
+}
+
+/* Hidden by default */
+.hidden {
+  display: none !important;
+}
+
+.weather-block {
+  position: relative;
+  flex: 1;
+  text-align: right;
+  font-size: 1.1rem;
+}
+#weather-info { display: inline-block; padding: .5rem; border-radius:8px; background:rgba(255,255,255,0.05); box-shadow:0 0 10px var(--neon); }
+#weather-info-icon {
+  cursor: pointer;
+  margin-left: .5rem;
+  animation: blink 1s infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+
 /* ========== Search Terminal ========== */
 .search-widget input {
   width: 100%;
@@ -220,4 +269,14 @@ body:not(.loading) .fog-layer {
 }
 .settings-panel button:hover {
   background: color-mix(in srgb, var(--neon) 70%, #000);
+}
+
+/* ========== Search Engine ========== */
+.search-widget input:focus {
+  outline: 2px solid var(--neon);
+  box-shadow: 0 0 8px var(--neon);
+}
+
+.search-widget input {
+  caret-color: var(--neon);
 }

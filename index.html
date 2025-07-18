@@ -13,15 +13,22 @@
   
   <main class="dashboard">
 
-    <!-- Time Widget -->
-    <section class="widget time-widget">
-      <div id="time">--:--</div>
-      <div id="date">-- -- ----</div>
+    <!-- Date & Time + Weather Combined -->
+    <section class="widget datetime-weather-widget">
+      <div class="time-block">
+        <div id="time">00:00</div>
+        <div id="date">Loading date...</div>
+      </div>
+      <div class="weather-block" id="weather-widget">
+        <div id="weather-info"></div>
+        <span id="weather-info-icon" class="info-icon hidden">⚠️</span>
+      </div>
     </section>
+
 
     <!-- Search Terminal -->
     <section class="widget search-widget">
-      <input type="text" id="search" placeholder="Initiate protocol..." autocomplete="off" />
+      <input type="text" id="search" placeholder="> System online. Awaiting input..." autocomplete="off" />
     </section>
 
     <!-- Quick Links -->
@@ -50,6 +57,30 @@
     <!-- Settings Panel -->
     <div class="settings-panel hidden">
     <h2>⚙ Settings</h2>
+
+    <div class="setting-option">
+      <label>
+        <input type="checkbox" id="toggle-weather" />
+        Enable Weather
+      </label>
+    </div>
+    <div class="setting-option">
+      <details>
+        <summary style="cursor: pointer;">🔑 Set API Key</summary>
+        <input type="text" id="weather-api-key" placeholder="Enter OpenWeather API Key" />
+      </details>
+    </div>
+    <div class="setting-option">
+      <label>
+        <input type="checkbox" id="toggle-units" />
+        Use Fahrenheit (°F)
+      </label>
+    </div>
+    <div class="setting-option">
+      <label>
+        <input type="text" id="override-location" placeholder="Override Location (e.g. Paris)" />
+      </label>
+    </div>
 
     <div class="setting-option">
         <label for="theme-select">🎨 Theme:</label>
