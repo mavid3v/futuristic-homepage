@@ -4,7 +4,7 @@ A sleek, immersive, sci-fi inspired custom homepage built using only **HTML, CSS
 
 ![screenshot](assets/images/preview.jpg) <!-- Optional preview image 1-->
 ---
-![screenshot](assets/images/preview-ii.jpg) <!-- Optional preview image 2-->
+![screenshot](assets/images/preview-ii.png) <!-- Optional preview image 2-->
 
 ---
 
