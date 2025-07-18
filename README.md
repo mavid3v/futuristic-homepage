@@ -2,7 +2,9 @@
 
 A sleek, immersive, sci-fi inspired custom homepage built using only **HTML, CSS, and vanilla JavaScript** — no frameworks, no libraries. Features glowing widgets, customizable themes, dynamic background animation, and sound-reactive UI.
 
-![screenshot](assets/images/preview.jpg) <!-- Optional preview image -->
+![screenshot](assets/images/preview.jpg) <!-- Optional preview image 1-->
+---
+![screenshot](assets/images/preview-ii.jpg) <!-- Optional preview image 2-->
 
 ---
 
@@ -10,12 +12,16 @@ A sleek, immersive, sci-fi inspired custom homepage built using only **HTML, CSS
 
 **v1.0.0** — Initial Stable Release  
 ✨ Includes:
+- Startup animation (smooth entrance)
+- Real-time weather widget with API key, unit toggle, and location override
+- Weather icons and error fallback
+- Auto-refresh every 15 minutes
+- Sound FX (hover, click, type, backspace)
 - Live clock and date
 - Theme switching (blue / green / red / purple)
 - Background animation toggle (starscape)
 - Sound toggle (hover, click, typing, backspace)
 - Settings panel with localStorage support
-- Typing sound FX on search input
 - Clean glassmorphic + neon design
 - Responsive layout foundation
 
@@ -26,6 +32,7 @@ A sleek, immersive, sci-fi inspired custom homepage built using only **HTML, CSS
 | Feature                 | Description                                      |
 |------------------------|--------------------------------------------------|
 | 🕒 Live Clock/Date      | Auto-updating widget                             |
+| 🌦️ Weather Widget         | Real-time weather (API-based, with icons & location override) |
 | 🔍 Terminal-style Search | Interactive styled input with typing sounds     |
 | 📁 Quick Links Grid     | Easily edit your favorite destinations           |
 | 💬 Quote of the Day     | Randomly selected from local JSON                |
@@ -33,17 +40,18 @@ A sleek, immersive, sci-fi inspired custom homepage built using only **HTML, CSS
 | 🎨 Neon Theme System    | Fully dynamic via CSS variables                  |
 | 🌌 Animated Background  | Starscape canvas                                 |
 | 🔊 Sound FX             | Hover, click, type, backspace                    |
-| 💾 Preferences Saved    | localStorage-powered persistence                 |
+| 💾 Persistent Preferences | All settings saved via `localStorage`          |
+| ⏳ Startup Animation      | Smooth fade-in UI loading animation            |
 
 ---
 
 ## 🧠 Tech Stack
 
 - HTML5
-- CSS3 (glassmorphism, variables, animations)
-- Vanilla JavaScript (DOM, Canvas, Storage)
+- CSS3 (glassmorphism, variables, animations, keyframes. neon effects)
+- Vanilla JavaScript (DOM, Canvas API, `localStorage`, Geolocation, Fetch)
 
-No dependencies. No external libraries.
+No frameworks. No dependencies. No external libraries.
 
 ---
 
@@ -60,8 +68,10 @@ futuristic-homepage/
 │   ├── js/
 │   │   └── main.js
 │   ├── fonts/
-│   │   ├── Orbitron-VariableFont\_wght.ttf
+│   │   ├── Orbitron-VariableFont_wght.ttf
 │   │   └── static/
+│   │   ├── Orbitron-Regular.ttf
+│   │   └── Orbitron-Bold.ttf
 │   ├── sounds/
 │   │   ├── hover.wav
 │   │   ├── click.wav
@@ -69,6 +79,8 @@ futuristic-homepage/
 │   │   └── backspace.wav
 │   │   ├── type-ii.wav
 │   │   └── backspace-ii.wav
+│   ├── icons/
+│   │ └── settings.svg
 │   └── data/
 │       └── quotes.json
 
@@ -78,13 +90,27 @@ futuristic-homepage/
 
 ## 🛠️ Customization
 
-You can easily modify:
-- Links grid (`index.html`)
-- Quotes (`assets/data/quotes.json`)
-- Sounds (`assets/sounds/`)
-- Fonts (`assets/fonts/`)
+Feel free to tweak anything. Here's what you can easily edit:
+- 🔗 Links grid (`index.html`)
+- 💬 Quotes (`assets/data/quotes.json`)
+- 🎧 Sounds (`assets/sounds/`)
+- 🎨 Themes — Adjust color variables in CSS or expand theme options
+- 🌦 **Weather** — Enable via settings panel
 
 ---
+
+## 🌦 Weather Widget Usage
+
+To use the weather widget:
+
+1. Open the ⚙️ **Settings Panel**.
+2. Enable `Weather` toggle.
+3. Enter your **OpenWeather API Key** in the "Set API Key" section.
+4. (Optional) Override location (e.g., `New York`).
+5. Choose °C or °F via "Use Fahrenheit" toggle.
+
+✅ Auto-refreshes every 15 minutes.  
+❗ A warning icon (⚠️) appears if disabled, missing API key, or location fetch fails.
 
 ## 🌐 Live Preview
 
@@ -102,16 +128,18 @@ git clone https://github.com/mavid3v/futuristic-homepage.git
 2. Open `index.html` in your browser.
 
 3. (Optional) Set it as your browser's homepage!
+4. Enjoy your futuristic dashboard!
 
 ---
 
-## 🧪 Upcoming Features (v1.1+)
-
-* Voice/AI terminal assistant
-* Typing welcome intro
-* Sticky note or to-do widget
-* Weather API integration
-* Custom layout presets
+## 🧪 Planned Features (v1.2+)
+- AI terminal assistant (voice/command)
+- Sticky notes or to-do widgets
+- Custom layout presets
+- Animated welcome intro
+- RSS feed module or news headlines
+- Audio visualizer
+- Music player integration
 
 ---
 
